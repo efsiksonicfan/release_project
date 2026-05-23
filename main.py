@@ -71,7 +71,7 @@ try:
     if os.path.exists("assets/audio/sfx/pickup.wav"):
         snd_pickup = pygame.mixer.Sound("assets/audio/sfx/pickup.wav")
         
-    # Нові звуки фіналів
+    # Звуки фіналів
     if os.path.exists("assets/audio/sfx/level_win.wav"):
         snd_level_win = pygame.mixer.Sound("assets/audio/sfx/level_win.wav")
         snd_level_win.set_volume(0.5)
@@ -317,14 +317,12 @@ while running:
             wave['radius'] += 5
             if wave['radius'] > wave['max_r']: waves.remove(wave)
 
-        # ФІКС БАГУ ЗІ ЗВУКОМ ПРОГРАШУ (Перевірка поточного стану гри)
         for e in enemies:
             e.update()
             if p_rect.colliderect(e.rect) and game_state == "PLAYING": 
                 game_state = "GAMEOVER"
                 if snd_game_over: snd_game_over.play()
 
-        # ФІКС БАГУ ЗІ ЗВУКОМ ВИГРАШУ
         if finish_rect and p_rect.colliderect(finish_rect) and game_state == "PLAYING":
             if current_level < len(LEVELS) - 1: game_state = "LEVEL_WIN"
             else: game_state = "WIN"
