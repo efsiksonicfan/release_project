@@ -29,7 +29,7 @@ else:
     title_font = pygame.font.SysFont("Courier New", 44, bold=True)
 
 # =====================================================================
-# 🖼️ ЗАВАНТАЖЕННЯ СПРАЙТІВ
+# 🖼 СПРАЙТИ
 # =====================================================================
 def load_sprite(path, size=None):
     if os.path.exists(path):
@@ -48,7 +48,7 @@ spr_battery_hud = load_sprite("assets/sprites/sonar_stuff/battery_hud.png", (150
 spr_block_filled = load_sprite("assets/sprites/sonar_stuff/block_filled.png", (10, 12))
 spr_sonar_label = load_sprite("assets/sprites/sonar_stuff/sonar_label.png", (100, 15))
 
-# Корінь папки sprites
+# Оформлення гри (заголовок, логотип)
 spr_menu_title = load_sprite("assets/sprites/game_title.png", (400, 100))
 icon = load_sprite("assets/sprites/game_icon.png")
 if icon: pygame.display.set_icon(icon)
@@ -56,7 +56,7 @@ if icon: pygame.display.set_icon(icon)
 wave_template = generate_pixel_wave(300)
 
 # =====================================================================
-# 🔊 ЗВУКОВА СИСТЕМА
+# 🔊 ЗВУКИ
 # =====================================================================
 snd_ping, snd_scream, snd_pickup = None, None, None
 snd_level_win, snd_game_over = None, None
@@ -123,7 +123,7 @@ glitch_timer = 0
 near_enemy_dist = 999999
 
 # =====================================================================
-# ✨ ФУНКЦІЯ СВІЧЕННЯ ТЕКСТУ (GLOW EFFECT)
+# ✨ НЕОНОВИЙ ТЕКСТ ВИГРАШУ ТА ПРОГРАШУ
 # =====================================================================
 def render_glow_text(screen, text, font_obj, main_color, glow_color, center_pos):
     main_surf = font_obj.render(text, False, main_color)
