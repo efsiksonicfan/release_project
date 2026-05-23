@@ -67,7 +67,7 @@ try:
         snd_ping = pygame.mixer.Sound("assets/audio/sfx/ping.wav")
     if os.path.exists("assets/audio/sfx/monster.wav"):
         snd_scream = pygame.mixer.Sound("assets/audio/sfx/monster.wav")
-        snd_scream.set_volume(0.6)
+        snd_scream.set_volume(0.1)
     if os.path.exists("assets/audio/sfx/pickup.wav"):
         snd_pickup = pygame.mixer.Sound("assets/audio/sfx/pickup.wav")
         
